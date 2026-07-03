@@ -37,7 +37,8 @@ const Arbitre = sequelize.define("Arbitre", {
     allowNull: false,
     defaultValue: "active",
   },
-}, {
+},
+ {
   tableName: "arbitres",
   timestamps: true,
 });
