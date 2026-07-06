@@ -23,10 +23,10 @@ const Arbitre = sequelize.define("Arbitre", {
     type: DataTypes.ENUM("UEFA", "CONMEBOL", "CAF", "AFC", "CONCACAF", "OFC"),
     allowNull: false,
   },
-  role: {
+categorie: {
     type: DataTypes.ENUM("Central", "Assistant", "Fourth", "VAR", "AVAR"),
     allowNull: false,
-  },
+},
   experience: {
     type: DataTypes.INTEGER,
     allowNull: false,

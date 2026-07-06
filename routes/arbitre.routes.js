@@ -5,15 +5,17 @@ import {
   getArbitreById,
   updateArbitre,
   deleteArbitre,
-} from "../controllers/arbitre.controller.js"; // Make sure .js is right here
+} from "../controllers/arbitre.controller.js";
+import { validateArbitre } from "../middlewares/validate.middleware.js";
+
 
 const router = express.Router();
 
-// Now you can cleanly map them to your routes:
-router.post("/", createArbitre);
+
+router.post("/",validateArbitre, createArbitre);
 router.get("/", getAllArbitres);
 router.get("/:id", getArbitreById);
-router.put("/:id", updateArbitre);
+router.put("/:id", validateArbitre, updateArbitre);
 router.delete("/:id", deleteArbitre);
 
 export default router;
