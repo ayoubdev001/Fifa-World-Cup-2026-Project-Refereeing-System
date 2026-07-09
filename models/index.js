@@ -2,6 +2,7 @@ import sequelize from "../config/database.js";
 import Arbitre from "./arbitre.model.js";
 import Match from "./match.model.js";
 import Affectation from "./affectation.model.js";
+import User from "./user.model.js";
 
 
 
@@ -39,4 +40,4 @@ const syncDatabase = async () => {
 
 syncDatabase();
 
-export { sequelize, Arbitre, Match, Affectation };
+export { sequelize, Arbitre, Match, Affectation, User };

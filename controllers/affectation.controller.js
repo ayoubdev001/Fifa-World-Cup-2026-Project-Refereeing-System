@@ -17,7 +17,7 @@ export const getAllAffectations = async (req, res, next) => {
       attributes: ["id", "arbitreId", "matchId", "role"],
       include: [
         {
-          model: Arbitre,
+          model: Arbitre, 
           attributes: ["id", "nom", "prenom", "confederation", "categorie"],
         },
         {

@@ -20,10 +20,7 @@ export const createArbitre = async (req, res, next) => {
 export const getAllArbitres = async (req, res, next) => {
     try {
         const arbitres = await Arbitre.findAll();
-       [
-           { id: 1, nom: "Tessema", prenom: "Bamlak" },
-           { id: 2, nom: "Ramos", prenom: "Carlos" }
-       ]
+        
        return res.status(200).json({
         message: "Referees retrieved successfully",
         data: arbitres,
