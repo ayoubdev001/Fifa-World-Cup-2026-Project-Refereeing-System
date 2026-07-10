@@ -6,6 +6,7 @@ import matchRoutes from "./routes/match.routes.js";
 import affectationRoutes from "./routes/affectation.routes.js";
 import logger from "./middlewares/logger.middleware.js";
 import errorHandler from "./middlewares/error.middleware.js";
+import authRoutes from "./routes/auth.routes.js";
 
 
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(logger);
 
 
+app.use("/auth", authRoutes);  
 app.use("/arbitres", arbitreRoutes);
 app.use("/matchs", matchRoutes);
 app.use("/affectations", affectationRoutes);
