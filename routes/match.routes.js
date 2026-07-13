@@ -11,11 +11,11 @@ import { validateMatch } from "../middlewares/validate.middleware.js";
 
 const router = express.Router();
 
-router.post("/", validateMatch, createMatch);
-router.get("/", getAllMatchs);
-router.get("/:id", getMatchById);
-router.put("/:id", validateMatch, updateMatch);
-router.delete("/:id", deleteMatch);
-router.get("/:id/arbitres", getMatchArbitres);
+router.post("/",authenticate, validateMatch, createMatch);
+router.get("/",authenticate,validateMatch, getAllMatchs);
+router.get("/:id",authenticate,validateMatch, getMatchById);
+router.put("/:id",authenticate, validateMatch, updateMatch);
+router.delete("/:id",authenticate,validateMatch, deleteMatch);
+router.get("/:id/arbitres",authenticate,validateMatch, getMatchArbitres);
 
 export default router;

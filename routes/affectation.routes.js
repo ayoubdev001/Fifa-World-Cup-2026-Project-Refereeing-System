@@ -10,10 +10,10 @@ import { validateAffectation } from "../middlewares/validate.middleware.js";
 
 const router = express.Router();
 
-router.post("/", validateAffectation, createAffectation);
-router.get("/", getAllAffectations);
-router.get("/:id", getAffectationById);
-router.put("/:id", validateAffectation, updateAffectation);
-router.delete("/:id", deleteAffectation);
+router.post("/",authenticate, validateAffectation, createAffectation);
+router.get("/",authenticate,validateMatch, getAllAffectations);
+router.get("/:id",authenticate,validateMatch, getAffectationById);
+router.put("/:id",authenticate, validateAffectation, updateAffectation);
+router.delete("/:id",authenticate,validateMatch, deleteAffectation);
 
 export default router;

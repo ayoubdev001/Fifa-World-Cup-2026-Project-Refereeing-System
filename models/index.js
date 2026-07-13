@@ -31,7 +31,7 @@ Match.belongsToMany(Arbitre, {
 
 const syncDatabase = async () => {
   try {
-   await sequelize.sync({ force: true });
+   await sequelize.sync({ alter: true });
     console.log("All tables synced successfully!");
   } catch (error) {
     console.error("Sync failed:", error.message);
