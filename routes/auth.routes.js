@@ -7,7 +7,7 @@ import { validateRegister, validateLogin } from "../middlewares/validateAuth.mid
 
 const router = express.Router();
 
-router.post("/register",/* authenticate, authorize("admin"), */  validateRegister, register);
+router.post("/register",authenticate, authorize("admin"),  validateRegister, register);
 router.post("/login", validateLogin, login);
 router.get("/me", authenticate, me);
 
